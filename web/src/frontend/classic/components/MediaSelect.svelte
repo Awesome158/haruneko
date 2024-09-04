@@ -171,9 +171,7 @@
     }
 
     let pluginDropdownValue: string;
-    async function selectFocus(event: FocusEvent) {
-        pluginDropdownValue = '';
-    }
+
     // VirtualList
     let container:HTMLElement;
     let containerHeight = 0;
@@ -207,7 +205,6 @@
             placeholder="Select a Plugin"
             bind:selectedId={pluginDropdownSelected}
             bind:value={pluginDropdownValue}
-            on:focus={selectFocus}
             on:clear={() => ($selectedPlugin = undefined)}
             on:select={(event) => selectPlugin(event.detail.selectedId)}
             size="sm"

@@ -68,7 +68,7 @@
 
     let itemNameFilter = '';
     $: filteredItems = items?.filter((item) => {
-        let conditions: Boolean[] = [];
+        let conditions: boolean[] = [];
         if (itemNameFilter)
             conditions.push(
                 item.Title.toLowerCase().indexOf(
@@ -327,10 +327,10 @@
                     multilang={!langFilter && MediaLanguages.length > 1}
                     selected={selectedItems.includes(item)}
                     hover={item === contextItem}
-                    on:view={(event) => onItemView(item)(event.detail)}
-                    on:mousedown={mouseHandler(item)}
-                    on:mouseup={mouseHandler(item)}
-                    on:mouseenter={mouseHandler(item)}
+                    onView={(event) => onItemView(item)(event.detail)}
+                    onmousedown={mouseHandler(item)}
+                    onmouseup={mouseHandler(item)}
+                    onmouseenter={mouseHandler(item)}
                 />
             {/each}
         {:catch error}
