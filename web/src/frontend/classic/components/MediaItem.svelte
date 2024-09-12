@@ -32,7 +32,7 @@
     const availableLanguageTags = Tags.Language.toArray();
 
     // NOTE: This relies on all language tags having a unicode flag prefix in their corresponding `Title`
-    function extractUnicodeFlagFromTags(tags: Tag[]): string {
+    function extractUnicodeFlagFromTags(tags: ReadonlyArray<Tag>): string {
         const languageTagTitleResourceKey = tags.find((tag) =>
             availableLanguageTags.includes(tag),
         )?.Title;
@@ -56,7 +56,7 @@
     import { Locale } from '../stores/Settings';
     import { DownloadTask, Status } from '../../../engine/DownloadTask';
 
-    let flag: FlagType;
+    let flag: FlagType = $state();
     const flagiconmap = new Map<FlagType, any>([
         [FlagType.Viewed, ViewFilled],
         [FlagType.Current, IconBookmarkFilled],
