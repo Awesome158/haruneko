@@ -3,21 +3,21 @@ import { TestFixture } from '../../../test/WebsitesFixture';
 
 const config = {
     plugin: {
-        id: 'manjanoon',
-        title: 'Manjanoon'
+        id: 'mechacomic',
+        title: 'MechaComic'
     },
     container: {
-        url: 'https://noonscan.site/manga/nn-holding-you-captive/',
-        id: '/manga/nn-holding-you-captive/',
-        title: 'Holding You Captive'
+        url: 'https://mechacomic.jp/books/141740',
+        id: '/books/141740',
+        title: '青島くんはいじわる【フルカラー版】'
     },
     child: {
-        id: '/nn-holding-you-captive-%d8%a7%d9%84%d9%81%d8%b5%d9%84-22/',
-        title: 'الفصل 22'
+        id: '/free_chapters/1706074/download/bef74217cd24f55a00320c6cb544efb8d6af016e',
+        title: '001話 豚足と王子様',
     },
     entry: {
         index: 0,
-        size: 1_244_612,
+        size: 49_290,
         type: 'image/webp'
     }
 };

@@ -3,21 +3,21 @@ import { TestFixture } from '../../../test/WebsitesFixture';
 
 const config = {
     plugin: {
-        id: 'umetruyen',
-        title: 'UmeTruyen'
+        id: 'rumanhua',
+        title: 'RuManhua'
     },
     container: {
-        url: 'https://umetruyenhay.net/truyen-vet-do.html',
-        id: '/truyen-vet-do.html',
-        title: 'Vết Đỏ'
+        url: 'https://rumanhua.com/IVppgVq/',
+        id: 'IVppgVq',
+        title: '我是怪兽大主宰'
     },
     child: {
-        id: '/truyen-vet-do/chapter-18',
-        title: 'Chapter 18'
+        id: '/IVppgVq/OagmJLY.html',
+        title: '第79话 吃龙心'
     },
     entry: {
-        index: 0,
-        size: 1_266_999,
+        index: 5,
+        size: 57_787,
         type: 'image/jpeg'
     }
 };

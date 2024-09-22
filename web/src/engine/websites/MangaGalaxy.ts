@@ -1,11 +1,11 @@
 import { Tags } from '../Tags';
-import icon from './VortexScans.webp';
+import icon from './MangaGalaxy.webp';
 import { Chapter, DecoratableMangaScraper, Manga, type MangaPlugin } from '../providers/MangaPlugin';
 import * as Common from './decorators/Common';
 import { FetchJSON } from '../platform/FetchProvider';
 
 type APIMangas = {
-    posts: APIManga[]
+    posts : APIManga[]
 }
 
 type APISingleManga = {
@@ -15,31 +15,31 @@ type APISingleManga = {
 type APIManga = {
     id: number,
     slug: string,
-    postTitle: string,
-    chapters?: APIChapter[]
+    postTitle: string
+    chapters? : APIChapter[]
 }
 
 type APIChapter = {
     id: number,
     slug: string,
     number: number,
-    title: string
+    title : string
 }
 
 type MangaID = {
     id: string,
-    slug: string,
+    slug : string
 }
 
-const pageScript = `[...document.querySelectorAll('section img[loading]')].map(img => img.src);`;
+const pageScript = `[...document.querySelectorAll('section img[loading]')].map(image => new URL(image.src, window.location.origin).href);`;
 
-@Common.PagesSinglePageJS(pageScript, 2500)
+@Common.PagesSinglePageJS(pageScript, 1500)
 @Common.ImageAjax()
 export default class extends DecoratableMangaScraper {
-    private readonly apiUrl = new URL('/api/', this.URI);
 
+    private readonly apiUrl = 'https://mangagalaxy.net/api/';
     public constructor() {
-        super('vortexscans', `Vortex Scans`, 'https://vortextoon.com', Tags.Media.Manga, Tags.Media.Manhwa, Tags.Language.English, Tags.Source.Scanlator);
+        super('mangagalaxy', 'Manga Galaxy', 'https://mangagalaxy.net', Tags.Media.Manga, Tags.Media.Manhwa, Tags.Media.Manhua, Tags.Language.English, Tags.Source.Scanlator);
     }
 
     public override get Icon() {
@@ -57,7 +57,7 @@ export default class extends DecoratableMangaScraper {
     }
 
     public override async FetchMangas(provider: MangaPlugin): Promise<Manga[]> {
-        const mangaList: Manga[] = [];
+        const mangaList : Manga[] = [];
         for (let page = 1, run = true; run; page++) {
             const mangas = await this.GetMangasFromPage(page, provider);
             mangas.length > 0 ? mangaList.push(...mangas) : run = false;

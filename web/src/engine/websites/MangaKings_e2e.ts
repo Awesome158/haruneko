@@ -3,22 +3,22 @@ import { TestFixture } from '../../../test/WebsitesFixture';
 
 const config = {
     plugin: {
-        id: 'umetruyen',
-        title: 'UmeTruyen'
+        id: 'mangakings',
+        title: 'Manga Kings'
     },
     container: {
-        url: 'https://umetruyenhay.net/truyen-vet-do.html',
-        id: '/truyen-vet-do.html',
-        title: 'Vết Đỏ'
+        url: 'https://mangakings.com.tr/manga/azur-lane/',
+        id: '/manga/azur-lane/',
+        title: 'Azur Lane Slow Ahead'
     },
     child: {
-        id: '/truyen-vet-do/chapter-18',
-        title: 'Chapter 18'
+        id: '/azur-lane-bolum-35/',
+        title: 'Bölüm 35'
     },
     entry: {
-        index: 0,
-        size: 1_266_999,
-        type: 'image/jpeg'
+        index: 1,
+        size: 1_213_488,
+        type: 'image/png'
     }
 };
 
